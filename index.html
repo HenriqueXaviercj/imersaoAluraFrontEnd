@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="bg-login"></div>
+    <main>
+        
+        <section id="login-container">
+            <h1 class="sr-only">Netflix</h1>
+             <img src="assets/netflix-logo.png" alt="Netflix Logo">
+            <h2>Log in</h2>
+            <p>Enter the username you'd like to log in with.</p>
+            <form action="/login" method="post" id="login-form">
+                <label for="username-input">
+                    <span>Username</span>
+                    <input type="text" name="username-input" id="username-input" required>
+                </label>
+                <button type="submit">Log in</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
