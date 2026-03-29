@@ -1,4 +1,5 @@
 @use "variables";
+@use "mixins";
 
 *,
 *::before,
@@ -8,117 +9,71 @@
     box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
     width: 100vw;
     height: 100vh;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    color: variables.$netflix-light-text;
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 
-    main {
+    aside {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 200px;
+        }
+    }
+}
+
+#profiles-conteiner {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+
+    h2 {
+        font-size: 1.6rem;
+        color: variables.$netflix-light-text;
+        text-align: center;
+        font-family: variables.$netflix-font;
+    }
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    list-style: none;
+
+    li {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        padding: 20px;
-        width: 100%;
-        height: 100%;
+        gap: 10px;
 
-    }
-
-    #bg-login {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-image: linear-gradient(to top, rgba(200, 0, 0, 0.8), variables.$netflix-black);
-        background-size: cover;
-        background-position: center;
-        background-color: variables.$netflix-black;
-        z-index: -1;
-    }
-}
-
-#login-container {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 40px;
-    border-radius: 8px;
-    width: 400px;
-    text-align: center;
-
-    img {
-        width: 200px;
-        margin: 50px 0 30px;
-    }
-
-    h2 {
-        font-size: 1.2em;
-        margin-bottom: 10px;
-    }
-    
-    p {
-        font-size: 0.9em;
-        margin-bottom: 20px;
-        color: variables.$netflix-light-text;
-    }
-
-    label {
-        display: block;
-        text-align: left;
-        margin-bottom: 5px;
-        font-size: 0.9em;
+        img, #edit-icon {
+            width: 100%;
+            height: auto;
+            height: 100%;
+            border-radius: 5px;
+            background-color: black;
+        }
 
         span {
-            display: block;
-            margin-bottom: 5px;
-            color: variables.$netflix-gray;
-            align-self: flex-start;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: none;
-            border-radius: 4px;
-            background-color: variables.$netflix-dark-gray;
+            font-size: 1.2rem;
             color: variables.$netflix-light-text;
-
-            &:focus {
-                outline: none;
-                background-color: variables.$netflix-light-gray;
-            }
-        }
-
-    }
-
-    button {
-        width: 100%;
-        padding: 10px;
-        border: none;
-        border-radius: 4px;
-        background-color: variables.$netflix-red;
-        color: variables.$netflix-light-text;
-        font-size: 1em;
-        cursor: pointer;
-
-        &:hover {
-            background-color: variables.$netflix-red;
+            font-family: variables.$netflix-font;
         }
     }
 }
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}

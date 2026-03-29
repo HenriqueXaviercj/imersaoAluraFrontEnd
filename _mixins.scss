@@ -1,0 +1,16 @@
+$devices: (
+  "mobile": 320px,
+  "tablet": 768px,
+  "desktop": 1024px
+);
+
+@mixin respond-to($device) {
+  $breakpoint: map-get($devices, $device);
+  @if $breakpoint {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @warn "No value found for '#{$device}' in $devices map.";
+  }
+}

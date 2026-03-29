@@ -7,22 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="bg-login"></div>
     <main>
-        
-        <section id="login-container">
-            <h1 class="sr-only">Netflix</h1>
-             <img src="assets/netflix-logo.png" alt="Netflix Logo">
-            <h2>Log in</h2>
-            <p>Enter the username you'd like to log in with.</p>
-            <form action="/login" method="post" id="login-form">
-                <label for="username-input">
-                    <span>Username</span>
-                    <input type="text" name="username-input" id="username-input" required>
-                </label>
-                <button type="submit">Log in</button>
-            </form>
-        </section>
+        <aside>
+            <h1>
+                <img src="assets/netflix-logo.png" alt="netflix logo">
+            </h1>
+            <div id="bg-aside"></div>
+        </aside>
+        <div id="profiles-conteiner">
+            <h2>Who's watching?</h2>
+            <ul>
+                <li class="profile" id="profile-1">
+                    <img src="assets/profile-1.jpg" alt="Profile 1">
+                    <span>Profile 1</span>
+                </li>
+                <li class="profile" id="profile-2">
+                    <img src="assets/profile-2.gif" alt="Profile 2">
+                    <span>Profile 2</span>
+                </li>
+                <li class="profile" id="profile-3">
+                    <img src="assets/profile-3.jpg" alt="Profile 3">
+                    <span>Profile 3</span>
+                </li>
+                <li class="profile" id="profile-4">
+                    <img src="assets/profile-4.png" alt="Profile 4">
+                    <span>Profile 4</span>
+                </li>
+                <li class="profile" id="profile-5">
+                    <img src="assets/profile-5.jpg" alt="Profile 5">
+                    <span>Profile 5</span>
+                </li>
+                <li class="profile" id="edit">
+                    <div id="edit-icon"></div>
+                    <span>Edit</span>
+                </li>
+            </ul>
+            <div id="bg-effect"></div>
+        </div>
     </main>
 </body>
 </html>
