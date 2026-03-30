@@ -5,7 +5,7 @@ Este projeto foi desenvolvido durante a Imersão Front-End da Alura. A proposta 
 - `HTML`
 - `SCSS`
 - `JavaScript`
-- `Github Copilot`
+- `Copilot`
 
 ## Características
 - Seleção de perfis de usuário, com redirecionamento dinâmico para a página de catálogo correspondente ao perfil escolhido.
