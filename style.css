@@ -9,23 +9,39 @@
 
 body,
 html {
-  height: 100vh;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
+/* ================= Layout ====================*/
 main {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-main aside {
+
+/* ================= Aside ====================*/
+aside {
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main aside img {
+@media (min-width: 1024px) {
+  aside {
+    flex-grow: 0;
+  }
+}
+aside img {
   width: 200px;
+}
+@media (min-width: 1024px) {
+  aside img {
+    width: 300px;
+  }
 }
 
 /* ================= Profiles ====================*/
@@ -45,23 +61,27 @@ main aside img {
 ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  padding: 20px;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: clamp(10px, 5vw, 20px);
   margin-bottom: 20px;
   list-style: none;
+}
+@media (min-width: 1024px) {
+  ul {
+    gap: 2rem;
+  }
 }
 ul li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
 }
 ul li figure.profile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.75rem;
-  width: 105px;
+  gap: 0.5rem;
+  width: auto;
   margin: 0;
 }
 ul li figcaption {
@@ -78,16 +98,20 @@ ul li figcaption {
   gap: 0.75rem;
   width: 150px;
 }
-.profile > div,
-.profile > img {
-  width: 100px;
-  height: 100px;
+.profile > div {
+  width: clamp(80px, 20vw, 120px);
+  height: clamp(80px, 20vw, 120px);
   border-radius: 12px;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.1);
 }
-.profile > div img,
-.profile > img {
+@media (min-width: 1024px) {
+  .profile > div {
+    width: 120px;
+    height: 120px;
+  }
+}
+.profile > div img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -95,8 +119,9 @@ ul li figcaption {
   display: block;
   transition: transform 0.2s ease-in-out;
 }
-.profile:hover > div img, .profile:hover > img {
-  transform: scale(1.05);
+.profile:hover > div {
+  transform: scale(1.1);
+  transition: 0.1s ease-in-out;
 }
 
 #edit-icon div {
@@ -109,17 +134,20 @@ ul li figcaption {
   inset: auto 0 0 0;
   z-index: -1;
   width: 100%;
-  height: 18rem;
+  height: clamp(16rem, 60vw, 21rem);
   border-radius: 120px 120px 0 0;
   background-image: radial-gradient(circle, #333333 50%, rgba(51, 51, 51, 0.5) 70%);
-  -o-object-fit: cover;
-     object-fit: cover;
+}
+@media (min-width: 1024px) {
+  .profile__bg {
+    display: none;
+  }
 }
 
 .aside__bg {
   position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
   width: 100%;
   height: 100%;
   background-color: black;
